@@ -1,5 +1,4 @@
 "use server";
-
 import { revalidatePath } from "next/cache";
 import User from "../database/models/user.models";
 import { connectToDatabase } from "../database/mongoose";
@@ -24,7 +23,6 @@ export async function getUserById(userId: string) {
     await connectToDatabase();
 
     const user = await User.findOne({ clerkId: userId });
-
     if (!user) throw new Error("User not found");
 
     return JSON.parse(JSON.stringify(user));
@@ -71,7 +69,8 @@ export async function deleteUser(clerkId: string) {
     handleError(error);
   }
 }
-/* 
+
+
 // USE CREDITS
 export async function updateCredits(userId: string, creditFee: number) {
   try {
@@ -90,4 +89,3 @@ export async function updateCredits(userId: string, creditFee: number) {
     handleError(error);
   }
 }
- */
