@@ -1,10 +1,10 @@
 "use client";
 
-import { loadStripe } from "@stripe/stripe-js";
+//import { loadStripe } from "@stripe/stripe-js";
 import { useEffect } from "react";
 
 import { useToast } from "@/components/ui/use-toast";
-import { checkOutCredits } from "@/lib/action/transaction.action";
+//import { checkOutCredits } from "@/lib/action/transaction.action";
 
 import { Button } from "../ui/button";
 
@@ -21,9 +21,9 @@ const Checkout = ({
 }) => {
   const { toast } = useToast();
 
-  useEffect(() => {
+  /* useEffect(() => {
     loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
-  }, []);
+  }, []); */
 
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
@@ -55,7 +55,7 @@ const Checkout = ({
       buyerId,
     };
 
-    await checkOutCredits(transaction);
+    //await checkOutCredits(transaction);
   };
 
   return (

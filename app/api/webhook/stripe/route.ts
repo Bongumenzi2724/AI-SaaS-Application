@@ -1,5 +1,5 @@
-/* eslint-disable camelcase */
-import { createTransaction } from "@/lib/action/transaction.action"
+/* /* eslint-disable camelcase */
+/* import { createTransaction } from "@/lib/action/transaction.action"
 import { NextResponse } from "next/server";
 import stripe from "stripe";
 
@@ -39,4 +39,4 @@ export async function POST(request: Request) {
   }
 
   return new Response("", { status: 200 });
-}
+}  */
